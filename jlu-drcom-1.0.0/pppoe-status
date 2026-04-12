@@ -1,0 +1,53 @@
+#!/bin/sh
+export LANG="en"
+IFCONFIG=/sbin/ifconfig
+IPCONFIG=/usr/sbin/ipconfig
+dr_exit() {
+    echo "pppoe-status-exit:$1"
+    exit $1
+}
+
+pppoeinfo_linux() {
+    ppp=`$IFCONFIG -a | awk '{
+        pppoe = substr($1,1,3)
+        if (pppoe == "ppp") {mac = " ";}
+        if ($1 == "inet" && ip == "" && mac == " ") {sub(/addr:/, ""); ip = $2}
+        if (ip != "") {printf ip; ip = ""}
+    }'`
+    if [ "$ppp" != "" ]; then
+        dr_exit 0
+    fi
+}
+
+pppoeinfo_macosx() {
+    for net in `ifconfig -l`
+    do
+        ip=""
+        pppoe=`echo $net | cut -c1-3`
+        if [ $pppoe == "ppp" ]; then
+            ifconfig $net | awk '{
+               if ($1 == "inet" && ip == "") {ip = $2}
+            }'
+            if [ $ip != ""]; then
+                dr_exit 0
+            fi
+        fi
+    done
+}
+
+os_type=`uname -s`
+
+if [ $os_type = "Linux"]; then
+    pppoeinfo_linux
+fi
+if [ $os_type = "Darwin" ]; then
+    pppoeinfo_macosx
+fi
+if [ $os_type = "FreeBSD" ]; then
+    pppoeinfo_macosx
+fi
+if [ $os_type = "OpenBSD" ]; then
+    pppoeinfo_macosx
+fi
+
+dr_exit 1   
