@@ -5,7 +5,7 @@ set -euo pipefail
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
-if [ "$(id -u)" -ne 0 ]; then
+if [[ "$(id -u)" -ne 0 ]]; then
     echo -e "\033[31m错误：必须使用 sudo 运行此脚本\033[0m"
     echo "Arch Linux用户可以使用 sudo jlu-config(AUR)"
     exit 1
