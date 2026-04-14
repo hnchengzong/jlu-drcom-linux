@@ -25,7 +25,7 @@ package() {
   install -Dm644 drcomrulesvr.drsc "$pkgdir/opt/drclient/drcomrulesvr.drsc"
 
   install -Dm755 hn-install.sh "$pkgdir/opt/drclient/hn-install.sh"
-  install -Dm755 getinfo.sh "$pkgdir/opt/drclient/getinfo.sh"
+  install -Dm755 hostinfo.sh "$pkgdir/opt/drclient/getinfo.sh"
   install -Dm755 pppoe-status "$pkgdir/opt/drclient/pppoe-status.sh"
 
   chown root:root "$pkgdir/opt/drclient/drcomauthsvr"
