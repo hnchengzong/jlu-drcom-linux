@@ -2,6 +2,8 @@
 
 jlu-drcom是适用于Arch Linux的吉林大学校园网登录认证客户端。
 
+![Arch Linux](https://img.shields.io/badge/Arch-Linux-blue?logo=archlinux&logoColor=white)
+
 ![Visitor Count](https://count.getloli.com/@jlu-drcom?theme=moebooru)
 
 ## 安装
