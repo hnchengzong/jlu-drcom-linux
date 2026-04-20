@@ -26,8 +26,13 @@ git clone --depth 1 https://github.com/hnchengzong/jlu-drcom.git
 
 cd ./jlu-drcom
 
-# 在运行前建议先根据README.md中的说明进行配置
-./DrClientLinux
+# 安装
+sudo bash ./hn-install.sh
+
+# 进行配置
+sudo jlu-config
+
+jlu-drcom
 
 
 ```
@@ -40,7 +45,7 @@ cd ./jlu-drcom
 
 ### 自动配置
 
-Arch Linux用户可以使用`sudo jlu-config`，其他发行版可以运行该项目中的hn-config.sh脚本。网络配置只支持NetworkManager。自动保存等操作被硬编码在了/opt/drclient中，你可以根据下面的说明来在你的安装目录中手动输入这些内容到`DrClientConfig`中，或者在脚本中把`JLU_CONFIG="/opt/drclient/DrClientConfig"`改为软件所在目录。
+Arch Linux用户可以使用`sudo jlu-config`，其他发行版可以运行该项目中的hn-config.sh脚本。如果你是使用hn-install来安装的，也可以直接`sudo jlu-config`来配置。网络配置只支持NetworkManager。自动保存等操作被硬编码在了/opt/drclient中，你可以根据下面的说明来在你的安装目录中手动输入这些内容到`DrClientConfig`中，或者在脚本中把`JLU_CONFIG="/opt/drclient/DrClientConfig"`改为软件所在目录。
 
 ### 手动网络设置（NetworkManager）
 
