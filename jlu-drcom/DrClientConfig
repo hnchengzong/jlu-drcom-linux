@@ -1,6 +1,6 @@
 [DrClientConfig]
 Account=
-Password=""
+Passoword=""
 Adapter=
 AutoLogin=0
 SavePassword=1
