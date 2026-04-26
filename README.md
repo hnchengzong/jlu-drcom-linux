@@ -4,7 +4,7 @@
 
 ![moe-counter](https://count.getloli.com/@jlu-drcom?theme=booru-lewd&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
 
-jlu-drcom-Lionel是适用于Linux的吉林大学校园网登录认证客户端。主要适用于Arch Linux。
+jlu-drcom-Linux是适用于Linux的吉林大学校园网登录认证客户端。主要适用于Arch Linux。
 
 ## 安装
 
