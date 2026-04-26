@@ -11,7 +11,7 @@ makedepends=()
 source=("https://github.com/hnchengzong/jlu-drcom-linux/releases/download/v$pkgver/jlu-drcom-$pkgver.tar.xz")
 sha256sums=('SKIP')   
 package() {
-  cd "$srcdir/$pkgname"
+  cd "$srcdir/jlu-drcom"
 
   install -d "$pkgdir/opt/drclient/translator"
 
